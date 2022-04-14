@@ -1,0 +1,74 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 12px;
+  position: fixed;
+  width: 100%;
+}
+
+.hidden {
+  transform: translate3d(0, 1, 0);
+  transition: background 0.5s, transform 1s;
+}
+
+.visible {
+  transform: translate3d(0, -100%, 0);
+  transition: background 0.5s, transform 1s;
+}
+
+.transparent {
+  background: transparent;
+  transform: translate3d(0, 1, 0);
+  transition: background 0.5s, transform 1s;
+}
+
+.color {
+  background: var(--orange-color);
+}
+.toggle {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+.toggle span {
+  background: var(--white-color);
+  border-radius: 4px;
+  height: 2px;
+  position: absolute;
+  transition: 0.5s;
+  width: 30px;
+}
+
+.toggle span:nth-child(1) {
+  left: 0px;
+  transform: translateY(-15px);
+  width: 15px;
+}
+
+.toggle.active span:nth-child(1) {
+  transform: translateY(0px) rotate(45deg);
+  transition-delay: 0.125s;
+  width: 30px;
+}
+
+.toggle span:nth-child(2) {
+  left: 0px;
+  transform: translateY(15px);
+  width: 15px;
+}
+
+.toggle.active span:nth-child(2) {
+  transform: translateY(0px) rotate(315deg);
+  transition-delay: 0.25s;
+  width: 30px;
+}
+
+.toggle.active span:nth-child(3) {
+  transform: translateX(60px);
+}
