@@ -1,3 +1,4 @@
+/* <-- Navbar --> */
 nav {
   display: flex;
   justify-content: space-between;
@@ -6,25 +7,97 @@ nav {
   width: 100%;
 }
 
-.hidden {
+.visible {
   transform: translate3d(0, 1, 0);
-  transition: background 0.5s, transform 1s;
+  transition: background 0.5s, transform 0.7s;
 }
 
-.visible {
+.hidden {
   transform: translate3d(0, -100%, 0);
-  transition: background 0.5s, transform 1s;
+  transition: background 0.5s, transform 0.7s;
 }
 
 .transparent {
   background: transparent;
   transform: translate3d(0, 1, 0);
-  transition: background 0.5s, transform 1s;
+  transition: background 0.5s, transform 0.7s;
 }
 
 .color {
   background: var(--orange-color);
 }
+
+/* <-- Hamburger Menu --> */
+
+.hamburger-menu {
+  align-items: center;
+  backdrop-filter: blur(7px);
+  background: var(--dark-orange-color-transparent);
+  box-shadow: 0 8px 32px 0 rgba(201, 108, 38, 0.37);
+  border-right: 3px solid var(--grey-color-transparent);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  list-style: none;
+  height: calc(100% - 56px);
+  position: fixed;
+  top: 56px;
+  -webkit-backdrop-filter: blur(7px);
+  width: 50%;
+}
+
+.right {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease-in-out 0.5s, background 0.5s 0.4s,
+    box-shadow 0.5s 0.4s;
+}
+
+.left {
+  background: transparent;
+  box-shadow: none;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.1s, background 0.1s;
+}
+
+.ham-item {
+  background: rgba(247, 158, 56, 0.25);
+  background: linear-gradient(
+    0deg,
+    rgba(133, 123, 124, 0.3) 0%,
+    rgba(201, 108, 38, 0.5) 50%,
+    rgba(247, 158, 56, 0.8) 100%
+  );
+  box-shadow: 0 8px 32px 0 var(--black-color-transparent);
+  border: 1px solid var(--grey-color-transparent);
+  border-bottom: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 130px;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+}
+
+.ham-item::after {
+  bottom: -50%;
+  border-left: 5px solid var(--beige-color);
+  border-right: 12px double var(--beige-color);
+  content: '';
+  height: 100px;
+  left: -100%;
+  opacity: 0.2;
+  position: absolute;
+  transition: 0.7s ease-out left;
+  transform: rotate(30deg);
+  width: 20px;
+}
+
+.ham-item:hover::after {
+  left: 120%;
+}
+
+/* <-- Hamburger Button --> */
 .toggle {
   align-items: center;
   cursor: pointer;
