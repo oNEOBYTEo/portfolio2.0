@@ -1,6 +1,8 @@
 /* <-- Navbar --> */
 nav {
+  z-index: 2;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 12px 12px;
   position: fixed;
@@ -14,7 +16,7 @@ nav {
 
 .hidden {
   transform: translate3d(0, -100%, 0);
-  transition: background 0.5s, transform 0.7s;
+  transition: background 0.5s, transform 0.7s 0.1s;
 }
 
 .transparent {
@@ -38,10 +40,11 @@ nav {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
+  left: 0;
   list-style: none;
-  height: calc(100% - 56px);
-  position: fixed;
-  top: 56px;
+  height: calc(100vh - 60px);
+  position: absolute;
+  top: 60px;
   -webkit-backdrop-filter: blur(7px);
   width: 50%;
 }
@@ -56,7 +59,7 @@ nav {
   background: transparent;
   box-shadow: none;
   transform: translate3d(-100%, 0, 0);
-  transition: transform 0.1s, background 0.1s;
+  transition: transform 0.3s, background 0.1s;
 }
 
 .ham-item {
@@ -119,24 +122,26 @@ nav {
 }
 
 .toggle span:nth-child(1) {
-  left: 0px;
+  left: 15px;
   transform: translateY(-15px);
   width: 15px;
 }
 
 .toggle.active span:nth-child(1) {
+  left: 0;
   transform: translateY(0px) rotate(45deg);
   transition-delay: 0.125s;
   width: 30px;
 }
 
 .toggle span:nth-child(2) {
-  left: 0px;
+  left: 15px;
   transform: translateY(15px);
   width: 15px;
 }
 
 .toggle.active span:nth-child(2) {
+  left: 0;
   transform: translateY(0px) rotate(315deg);
   transition-delay: 0.25s;
   width: 30px;

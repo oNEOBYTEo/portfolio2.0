@@ -12,17 +12,22 @@ import { useScroll } from '../../hooks/useScroll';
 import './Nav.css';
 
 const Nav = () => {
+  // Open and close menu
   const [hamButton, setHamButton] = useState(false);
 
+  // Detect scroll
   const { scrollY, scrollDirection } = useScroll();
 
   return (
     <>
       <nav
-        className={`${scrollY < 400 && !hamButton ? 'transparent' : 'color'} ${
-          scrollDirection !== 'up' ? 'visible' : 'hidden'
-        }`}
+        className={`${
+          scrollY < screen.height && !hamButton ? 'transparent' : 'color'
+        } ${scrollDirection !== 'up' ? 'visible' : 'hidden'}`}
       >
+        <a href="#top">
+          <Logo fill="#f8f9fa" width={32} height={32} />
+        </a>
         <div
           className={hamButton ? 'active toggle' : 'toggle'}
           onClick={() => setHamButton(!hamButton)}
@@ -31,9 +36,8 @@ const Nav = () => {
           <span></span>
           <span></span>
         </div>
-        <Logo fill="#f8f9fa" width={32} height={32} />
+        <Menu hamButton={hamButton} scrollDirection={scrollDirection} />
       </nav>
-      <Menu hamButton={hamButton} scrollDirection={scrollDirection} />
     </>
   );
 };

@@ -7,7 +7,9 @@ function Menu({ hamButton, scrollDirection }) {
         hamButton && scrollDirection !== 'up' ? 'right' : 'left'
       }`}
     >
-      <li className="ham-item">About Me</li>
+      <li className="ham-item">
+        <a href="#imagen">About Me</a>
+      </li>
       <li className="ham-item">Projects</li>
       <li className="ham-item">Technologies</li>
       <li className="ham-item">My services</li>
