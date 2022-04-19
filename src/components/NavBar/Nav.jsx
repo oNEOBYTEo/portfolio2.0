@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
 // Icons
-import Logo from '../../icons/Logo';
+import Logo from '../../assets/icons/Logo';
 
 // Components
-import Menu from './HamburgerMenu/Menu';
+import Menu from './Menu';
 
 // Hooks
 import { useScroll } from '../../hooks/useScroll';
-
-import './Nav.css';
 
 const Nav = () => {
   // Open and close menu
@@ -25,7 +23,7 @@ const Nav = () => {
           scrollY < screen.height && !hamButton ? 'transparent' : 'color'
         } ${scrollDirection !== 'up' ? 'visible' : 'hidden'}`}
       >
-        <a href="#top">
+        <a href="#">
           <Logo fill="#f8f9fa" width={32} height={32} />
         </a>
         <div
@@ -36,7 +34,7 @@ const Nav = () => {
           <span></span>
           <span></span>
         </div>
-        <Menu hamButton={hamButton} scrollDirection={scrollDirection} />
+        <Menu hamButton={hamButton} scrollDirection={scrollDirection} setHamButton={setHamButton} />
       </nav>
     </>
   );
