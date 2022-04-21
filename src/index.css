@@ -292,81 +292,76 @@ img {
 }
 
 .hero {
-  z-index: 1;
-  position: relative;
-  font-family: 'Anton', sans-serif;
+  align-items: center;
   background-image: url(./assets/images/hero-blur.png);
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
+  font-family: 'Anton', sans-serif;
   justify-content: center;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(4px);
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 1; /*! mirar si sirve para algo  */
 }
 
 .text {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 80px;
-  font-weight: bold;
-
-  filter: drop-shadow(0 0 2px var(--black-color));
-
   background-image: url('./assets/images/hero-text.jpg');
   background-size: cover;
   background-position: center;
-
   background-clip: text;
+  color: transparent;
+  display: flex;
+  filter: drop-shadow(0 0 2px var(--black-color));
+  font-size: 80px;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 100vh;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
 }
 
 .scroll-about-me {
-  width: 100px;
-  height: 50px;
-  position: absolute;
   bottom: 5px;
+  height: 50px;
   left: 0;
-  right: 0;
   margin: auto;
+  right: 0;
+  width: 100px;
+  position: absolute;
   z-index: 10;
 }
 
 .scroll-about-me::before {
   bottom: 20px;
-  width: 60px;
   height: 60px;
+  width: 60px;
 }
 
 .scroll-about-me::after {
-  width: 30px;
-  height: 30px;
-  bottom: 35px;
-  -webkit-animation: float 0.7s infinite alternate;
   animation: float 0.7s infinite alternate;
+  bottom: 35px;
+  height: 30px;
+  width: 30px;
+  -webkit-animation: float 0.7s infinite alternate;
 }
 
 .scroll-about-me::after,
 .scroll-about-me::before {
   content: '';
-  display: block;
   border-bottom: 1px solid #fff;
   border-right: 1px solid #fff;
-  -webkit-transform: rotate(45deg);
+  display: block;
   transform: rotate(45deg);
   margin: auto;
   position: absolute;
   left: 0;
   right: 0;
+  -webkit-transform: rotate(45deg);
 }
 
 /* <-- About Me --> */
@@ -376,13 +371,14 @@ img {
 }
 
 #about-me > img {
-  width: 100%;
+  border-radius: 5px;
   height: 300px;
   object-fit: cover;
-  border-radius: 5px;
+  width: 100%;
 }
 
 /* <-- My Projects --> */
+
 #my-projects > article {
   border-radius: 5px;
   display: flex;
@@ -397,7 +393,7 @@ img {
 
 #my-projects > article > h3 {
   text-transform: uppercase;
-  margin: 10px 0px;
+  margin: 12px 0px;
 }
 
 #my-projects > article > p {
@@ -406,6 +402,88 @@ img {
 
 #my-projects > article > a {
   margin: 0px 0px 24px 0px;
+}
+
+/* Technologies */
+#technologies {
+  background-color: var(--grey-color);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  column-gap: 24px;
+}
+#technologies > h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#technologies > article {
+  min-width: 88px;
+  text-align: center;
+}
+
+/* <-- Services --> */
+#services > article {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  row-gap: 32px;
+  outline: 2px solid var(--orange-color);
+  box-shadow: 2px 5px 10px 0px var(--black-color-transparent);
+  width: 100%;
+}
+
+#services > article > h3 {
+  text-transform: uppercase;
+  margin: 12px 0px;
+}
+
+#services > article > p {
+  margin: 24px;
+  text-align: center;
+}
+
+/* <-- Contact / Footer --> */
+#contact {
+  background: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  height: 100px;
+  justify-content: space-evenly;
+  padding: 12px;
+  color: var(--white-color);
+}
+
+#contact > p,
+#contact > a {
+  display: inline-flex;
+  align-items: center;
+}
+
+#contact > p > span,
+#contact > a > span {
+  min-width: 60px;
+  margin-left: 8px;
+
+  position: relative;
+}
+
+.phone-number > span::before {
+  content: '+57';
+  margin-right: 8px;
+}
+
+.email > span::after {
+  content: '@gmail.com';
+  position: absolute;
+  left: 0;
+  top: 16px;
 }
 
 /*  <-- Hero Animations -->  */

@@ -12,7 +12,7 @@ import {
 
 const MyTechnologies = () => {
   return (
-    <section style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <section id="technologies">
       <h2>What technologies do I use?</h2>
       <article>
         <Js width={64} height={64} />
