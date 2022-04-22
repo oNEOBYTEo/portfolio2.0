@@ -374,7 +374,7 @@ img {
   border-radius: 5px;
   height: 300px;
   object-fit: cover;
-  width: 100%;
+  max-width: 400px;
 }
 
 /* <-- My Projects --> */
@@ -388,6 +388,7 @@ img {
   text-align: justify;
   row-gap: 32px;
   outline: 2px solid var(--orange-color);
+  max-width: 400px;
   box-shadow: 2px 5px 10px 5px var(--black-color-transparent);
 }
 
@@ -434,7 +435,7 @@ img {
   row-gap: 32px;
   outline: 2px solid var(--orange-color);
   box-shadow: 2px 5px 10px 0px var(--black-color-transparent);
-  width: 100%;
+  max-width: 400px;
 }
 
 #services > article > h3 {
@@ -464,6 +465,13 @@ img {
 #contact > a {
   display: inline-flex;
   align-items: center;
+}
+
+#contact > a {
+  color: var(--white-color);
+}
+#contact > a:hover {
+  color: var(--orange-color);
 }
 
 #contact > p > span,
